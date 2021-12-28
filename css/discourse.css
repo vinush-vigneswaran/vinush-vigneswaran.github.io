@@ -31,7 +31,8 @@ body {
 
 .all-blogs{
     padding-top: 20px;
-    width: 900px;
+    max-width: 800px;
+    padding-left: 10px;
 
 }
 
@@ -66,5 +67,11 @@ body {
     opacity: 100%;
 }
 
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+    .main-container{
+      flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
 
 * { color:#fff; text-decoration: none;}

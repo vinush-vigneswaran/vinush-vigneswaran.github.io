@@ -92,8 +92,15 @@ body {
     stroke-dashoffset: 0;
     stroke-dasharray: 760;
   }
+
   
-  
+  @media screen and (max-width: 800px) {
+    .button-group{
+      flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
+      align-items: center;
+      padding-top: 10%;
+    }
+  }
   
   * { color:#fff; text-decoration: none;}
   

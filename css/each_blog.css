@@ -21,6 +21,7 @@ body {
     flex-direction: column;
     font-size:120%;
     width: 240px;
+    padding-bottom: 20px;
 }
 
 
@@ -31,7 +32,8 @@ body {
 
 .blog-container{
     padding-top: 20px;
-    width: 900px;
+    max-width: 900px;
+    padding-left: 10px;
 
 }
 
@@ -69,5 +71,12 @@ body {
     font-size: 20px;
     line-height: 1.6;
 }
+
+@media screen and (max-width: 800px) {
+    .main-container{
+      flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
 
 * { color:#fff; text-decoration: none;}
