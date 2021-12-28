@@ -99,7 +99,9 @@ body {
       flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
       align-items: center;
       padding-top: 10%;
+      padding-bottom: 0%;
     }
+
   }
   
   * { color:#fff; text-decoration: none;}
