@@ -53,7 +53,7 @@ body {
   
    .typewritten-button-info:hover .typewritten-button-text{
     color: #19f6e8;
-    transition: 5s;
+    transition: 2s;
     font-style: italic;
    }
    

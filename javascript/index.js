@@ -41,7 +41,7 @@ var TxtType = function(el, toRotate, period, toDelete) {
   
   //  console.log("now: "+ this.length)
   //  console.log("full:" + fullTxt.length)
-    if (this.length  >= fullTxt.length -2) {
+    if (this.length  >= fullTxt.length) {
       this.el.innerHTML = '<span class="bold-wrap">'+this.txt+'</span><span class="no-bold-wrap">'+this.boldText+'</span>';
       } else {
         this.el.innerHTML = '<span class="bold-wrap">'+this.txt+'</span><span class="no-bold-wrap">'+this.boldText+'|</span>';
