@@ -30,19 +30,26 @@ body {
 }
 
 .all-proj{
-  padding-top: 20px;
-  max-width: 800px;
+  padding-top: 30px;
+  max-width: 1200px;
   padding-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
 
+.proj-card{
+  width:100%;
 }
 
 .proj-blocks{
   text-align: left;
-  padding-left: 20px;
-  border-left: 2px solid white;
+  /* padding-left: 20px; */
+  margin-top: 10px;
+  /* border-left: 2px solid white; */
 }
 .proj-title{
-  font-size: 22px;
+  font-size: 18px;
   color: white;
   transition: font-size 0.5s ease;
 }
@@ -57,20 +64,74 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.proj-blocks:hover .proj-title{
-  font-size: 30px;
+.proj-card:hover .proj-title{
+  font-size: 25px;
   opacity: 100%;
 }
 
-.proj-blocks:hover .proj-summary{
+.proj-card:hover .proj-summary{
   opacity: 100%;
 }
 
 /* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .main-container{
     flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
   }
+  .all-proj{
+    padding-top: 20px;
+    max-width: 1200px;
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+}
+
+
+
+/* hover effect for cards */
+
+.img-container {
+  width:100%;
+  position: relative;
+
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: teal;
+}
+
+.proj-card:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
 }
 
 

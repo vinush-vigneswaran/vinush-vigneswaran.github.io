@@ -72,6 +72,14 @@ body {
     line-height: 1.6;
 }
 
+/* Links */
+
+.links{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 22px;
+  }
+
 @media screen and (max-width: 800px) {
     .main-container{
       flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
