@@ -47,6 +47,7 @@ body {
   /* padding-left: 20px; */
   margin-top: 10px;
   /* border-left: 2px solid white; */
+  height: 50px;
 }
 .proj-title{
   font-size: 18px;
@@ -65,8 +66,9 @@ body {
 }
 
 .proj-card:hover .proj-title{
-  font-size: 25px;
+  font-size: 21px;
   opacity: 100%;
+  transition: 0.8s;
 }
 
 .proj-card:hover .proj-summary{
