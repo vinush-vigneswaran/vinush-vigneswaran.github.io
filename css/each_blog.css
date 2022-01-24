@@ -42,11 +42,12 @@ body {
 
 }
 .title{
-    font-size: 30px;
+    font-size: 40px;
     color: white;
     transition: font-size 0.5s ease;
     padding-left: 20px;
     border-left: 2px solid white;
+    padding-bottom: 10px;
 }
 
 .date{
@@ -58,9 +59,10 @@ body {
 
 .subheading{
     transition: opacity 0.5s ease;
+    margin-top: 15px;
     padding-left: 20px;
     border-left: 2px solid white;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 
