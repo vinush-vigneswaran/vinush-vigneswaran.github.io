@@ -80,4 +80,5 @@ var TxtType = function(el, toRotate, period, toDelete) {
     }
   
   };
-  
+
+

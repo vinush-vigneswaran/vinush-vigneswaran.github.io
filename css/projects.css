@@ -4,7 +4,6 @@ body {
   text-align: left;
   color:#fff;
   font-family: 'Roboto', sans-serif;
-
 }
 
 .main-container{
@@ -134,6 +133,11 @@ body {
   transform: translate(-50%, -50%);
   text-align: left;
 }
+
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
 
 
 * { color:#fff; text-decoration: none;}
