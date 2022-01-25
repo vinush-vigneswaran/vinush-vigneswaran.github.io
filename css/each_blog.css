@@ -76,26 +76,16 @@ body {
 
 .quote{
     transition: opacity 0.5s ease;
-    padding-right: 20px;
-    border-right: 0.5px solid white;
-    font-size: 20px;
-    line-height: 1.6;
-    text-align: right;
-}
-
-.extract{
-    transition: opacity 0.5s ease;
     padding-left: 40px;
-    padding-right: 60px;
+    padding-right: 100px;
     /* border-left: 0.5px solid white; */
     font-size: 20px;
     line-height: 1.6;
-    text-align: left;
+    text-align: right;
     font-style: italic;
 }
 
 /* Links */
-
 .links{
     padding-top: 20px;
     padding-bottom: 20px;
