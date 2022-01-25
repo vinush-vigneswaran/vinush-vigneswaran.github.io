@@ -205,7 +205,7 @@ body {
     display: flex;
     flex-direction: row;
   }
-  
+
   @-webkit-keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
