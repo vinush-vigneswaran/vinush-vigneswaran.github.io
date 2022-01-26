@@ -216,6 +216,18 @@ body {
     to {opacity: 1}
   }
   
+  @media screen and (max-width: 1000px) {
+
+    .quote{
+      padding-left: 40px;
+      padding-right: 10px;
+  }
+  
+  }
+
+
+
+
 
 
 * { color:#fff; text-decoration: none;}
