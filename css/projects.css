@@ -153,7 +153,9 @@ body {
     grid-template-columns: 1fr;
     grid-gap: 20px;
   }
-
+  .text{
+    font-size: 15px;
+  }
 }
 
 * {box-sizing: border-box}
