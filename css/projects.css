@@ -97,24 +97,6 @@ body {
   opacity: 100%;
 }
 
-/* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 900px) {
-  .main-container{
-    flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
-  }
-  .all-proj{
-    padding-top: 20px;
-    max-width: 1200px;
-    padding-left: 10px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
-  }
-
-}
-
-
-
 /* hover effect for cards */
 
 .img-container {
@@ -143,7 +125,7 @@ body {
 }
 
 .proj-card:hover .overlay {
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .text {
@@ -155,6 +137,23 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: left;
+  font-size: 20px;
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 900px) {
+  .main-container{
+    flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .all-proj{
+    padding-top: 20px;
+    max-width: 1200px;
+    padding-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
 }
 
 * {box-sizing: border-box}
