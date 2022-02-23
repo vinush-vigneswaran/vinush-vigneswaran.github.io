@@ -6,6 +6,23 @@ body {
     font-family: 'Roboto', sans-serif;
   
   }
+
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+  .header-links{
+    margin-top: 20px;
+    width: 900px;
+    color: #19f6e8;
+    text-align: right;
+  }
+
+  .header #header-link{
+    color: #19f6e8;
+  }
   
   .main-container{
     display: flex;
@@ -114,6 +131,9 @@ body {
       align-items: center;
       padding-top: 10%;
       padding-bottom: 0%;
+    }
+    .header-links{
+      text-align: center;
     }
 
   }

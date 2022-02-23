@@ -12,6 +12,28 @@ body {
   width: 85%;
   }
 
+.main-feed-container{
+  display: flex;
+  flex-direction: column;
+  }
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  
+}
+.header-links{
+  margin-top: 20px;
+  width: 900px;
+  color: #19f6e8;
+  text-align: right;
+}
+
+.header #header-link{
+  color: #19f6e8;
+}
+
 /* For header files */
 .header-container{
   padding-top: 20px;
