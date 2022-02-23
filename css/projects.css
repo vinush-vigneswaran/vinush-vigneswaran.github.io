@@ -125,7 +125,7 @@ body {
 }
 
 .proj-card:hover .overlay {
-  opacity: 0.95;
+  opacity: 0.93;
 }
 
 .text {
@@ -137,7 +137,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: left;
-  /* font-size: 20px; */
+  font-size: 18px;
 }
 
 /* Use a media query to add a break point at 800px: */
@@ -153,9 +153,9 @@ body {
     grid-template-columns: 1fr;
     grid-gap: 20px;
   }
-  /* .text{
+  .text{
     font-size: 16px;
-  } */
+  }
 }
 
 * {box-sizing: border-box}
