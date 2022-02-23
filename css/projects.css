@@ -141,7 +141,7 @@ body {
 }
 
 /* Use a media query to add a break point at 800px: */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .main-container{
     flex-direction: column; /* The width is 100%, when the viewport is 800px or smaller */
   }
@@ -154,7 +154,7 @@ body {
     grid-gap: 20px;
   }
   .text{
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
