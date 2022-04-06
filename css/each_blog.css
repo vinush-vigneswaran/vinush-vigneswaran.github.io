@@ -22,7 +22,6 @@ body {
     font-size:120%;
     width: 240px;
     padding-bottom: 20px;
-    
 }
 
 .stay-on{
@@ -103,13 +102,26 @@ body {
 }
 
 .contents{
-  padding-top: 25px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.contents-row{
+  padding-right: 20px;
 }
 
 .contents-item{
   color: #19f6e8;
-  padding-top: 12px;
+  padding-bottom: 12px;
   font-size: 13px;
+}
+
+.contents-heading{
+  color: #19f6e8;
+  padding-top: 14px;
+  font-size: 13px;
+  text-decoration: underline;
 }
 
 /* collapsible cards */
@@ -300,8 +312,17 @@ body {
     .quote{
       padding-left: 40px;
       padding-right: 10px;
-  }
-  
+    }
+    .main-container{
+      width: 100%;
+    }
+    .section{
+
+      padding-right: 10px;
+    }
+    .contents{
+      flex-direction: column;
+    }
   }
 
 
