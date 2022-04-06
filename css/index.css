@@ -124,6 +124,11 @@ body {
   .footer-item:hover{
     color: #19f6e8;
   }
+
+  .links{
+    color: #19f6e8;
+    text-decoration: underline;
+  }
   
   @media screen and (max-width: 800px) {
     .button-group{

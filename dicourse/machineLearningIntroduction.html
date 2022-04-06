@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/each_blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../media/icon2.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!-- latex -->
+    <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+
+    <title>Vinush Vigneswaran</title>
+
+</head>
+<body>
+    <div class="main-container">
+
+        <a href="../discourse.html">
+        <div class="header-container">
+            <div class="left-item">
+                <b>candid</b> discourse
+            </div>
+            <div class="left-item">
+                <b><  |</b>
+            </div>
+            <div class="left-item">
+            <div class="contents"> 
+                <a href="#s01"><div class="contents-item"> 01 - The Machine Learning Landscape</div></a>
+                <a href="#s02"><div class="contents-item">  02 - End-to-End Machine Learning projects</div></a>
+                <a href="#s03"><div class="contents-item">  03 - Classification</div></a>
+                <a href="#s04"><div class="contents-item">  04 - Training models</div></a>
+                <a href="#s05"><div class="contents-item">  05 - Support Vector Machines</div></a>
+                <a href="#s06"><div class="contents-item">  06 - Decision Trees</div></a>
+                <a href="#s07"><div class="contents-item">  07 - Ensemble Learning and Random Forests</div></a>
+                <a href="#s08"><div class="contents-item">  08 - Dimensionality Reduction</div></a>
+                <a href="#s09"><div class="contents-item">  09 - Unsupervised Learning Techniques</div></a>
+                <a href="#s10"><div class="contents-item">  10 - Introduction to Artificial Neural Networks</div></a>
+                <a href="#s11"><div class="contents-item">  11 - Training Deep Neural Networks</div></a>
+                <a href="#s12"><div class="contents-item">  12 - Custom Models and Training (TensorFlow)</div></a>
+                <a href="#s13"><div class="contents-item">  13 - Loading and Preprocessing Data (TensorFlow)</div></a>
+                <a href="#s14"><div class="contents-item">  14 - Deep Computer Vision Using Convolution Neural Networks</div></a>
+                <a href="#s15"><div class="contents-item">  15 - Processing Sequences Using RNNs and CNNs</div></a>
+                <a href="#s16"><div class="contents-item">  16 - Natural Language Processing with RNNs and Attention</div></a>
+                <a href="#s17"><div class="contents-item">  17 - Representation Learning and Generative Learning</div></a>
+                <a href="#s18"><div class="contents-item">  18 - Reinforcement Learning</div></a>
+                <a href="#s19"><div class="contents-item">  19 - Training and Deployting TensorFlow Models at Scale</div></a>
+            </div>
+        </div>
+        </div>
+        </a>
+
+        <div class="blog-container">
+
+            <div class="blog-block">
+                <div class="title"><b>Review of Hands-on Machine Learning</b> </b></div>
+                <div class="date">24th of March 2021</div><br>
+
+                <div class="subheading"><b>00 &emsp; How to use this guide?</b></div>
+                
+                <div class="section">
+                    <p>The best way to get the most out of this guide is to
+                    attempt the questions first.</p>
+
+                    <p>If unsure, press on the question to see the answer.</p>
+
+                    <p>Once you have gone through a complete section, 
+                    go through the questions again and see if you
+                    retained the definitions and concepts.</p>
+
+                    <p>There are three types of questions, labelled as 
+                    "concept", "definition" and "code". The concept-based
+                    questions require a bit of thinking and expects you to explain the
+                    concept to yourself. The other two are self-explanatory.</p>
+                </div>
+
+                <div class="section">
+                    <p>
+                    <b>These notes are based on the book "Hands-on Machine
+                    Learning with Scikit-Learn, Keras and TensorFlow"
+                    by Aurelien Geron.</b>
+                    </p>
+                </div><br>
+                
+                <!-- CHAPTER 1 -->
+                <div id="s01"><div class="subheading"><b>01 &emsp; The Machine Learning Landscape</b></div><br></div>
+                <div class="section">
+
+                    <!-- Question -->
+                    <button class="collapsible">What is machine learning?</button>
+                    <div class="content">
+                      <p>
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna 
+                          aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                    </div><br>
+
+                    <!-- Question -->
+                    <button class="collapsible">What is machine learning?</button>
+                    <div class="content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                          sed do eiusmod tempor incididunt ut labore et dolore magna 
+                          aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                      </p>
+                    </div>
+
+                </div><br>
+                <!--------------------------> 
+
+                <!-- CHAPTER 2 -->
+                <div id="s02"><div class="subheading"><b>02 &emsp; End-to-End Machine Learning Projects</b></div><br></div>
+                <div class="section">
+
+                    <!-- Question 1-->
+                    <button class="collapsible">What is a data pipeline?</button>
+                    <div class="content">
+                      <p>A sequence of data processing components is called a data pipeline.</p>
+                      <p>A single machine learning model may be part of a much bigger project, with the
+                        output of this model being fed into another model as one of its (potentially many)
+                         input(s).</p>
+                      <p>
+                        Usually the models are somewhat self-contained, some input data comes into a model, 
+                        and it outputs its result into a data store. This is then pulled into another 
+                        model which then provides its own ouput. The system can therefore be asynchronous.
+                      </p>
+                      
+                      <img src="../media/doc-imgs/discourse_machine_learning/pipeline.png" alt="pipeline" width="100%"><br>
+                    </div><br>
+
+                    <!-- Question 2-->
+                    <button class="collapsible">
+                        What is the difference between univariate and multivariate regression problem?
+                    </button>
+                    <div class="content">
+                      <p>
+                          A regression task whereby we are trying to predict multiple variables 
+                          is called a multi-variate regression problem. 
+                          As such, you can figure out what a univariate regression task is.
+                        <br><br>
+                          Psst..."uni-" means one
+                      </p>
+                    </div><br>
+
+                    <!-- Question 3-->
+                    <button class="collapsible">
+                        What is a multiple regression problem?
+                    </button>
+                    <div class="content">
+                      <p>
+                        When the task involves using multiple input features to predict the output(s). 
+                        For example, using district population, number of rooms, median income etc. 
+                        to predict the price of a house.
+                      </p>
+                    </div><br>
+
+                    <!-- Question 4 -->
+                    <button class="collapsible">
+                        What is the typical perfomance measure used for regression problems?
+                        Write down the equation.
+                    </button>
+                    <div class="content">
+                      <p>
+                        Root Mean Square Error (RMSE)
+                        <center>
+                        <img src="../media/doc-imgs/discourse_machine_learning/rmse.png" alt="pipeline" width="50%"><br>
+                        </center>
+                      </p>
+                      <p>Here "m" is the number of instances. "h" is your prediction function 
+                          (i.e. your model). This equation finds the difference between the actual
+                          and predicted value for the i-th instance, squares it, then sums over
+                          all instances in your training data. 
+                      </p>
+                      <p>
+                            RMSE gives a higher weight for larger errors.
+                      </p>
+                    </div><br>
+
+                    <!-- Question -->
+                    <button class="collapsible">
+                        How can you mathematically represent the i-th instance?
+                    </button>
+                    <div class="content">
+                      <p>
+                        We need to be able to represent each instance efficiently.
+                        Let's say given a few features such as height, weight, frequency
+                        of exercise we would like to predict the whether or not the person
+                        will suffer from  cardiovascular diseases (CD).
+                      </p><p>
+                        Each person would be an instance.
+                      </p><p>
+                        When we collect the data to train our model, we can represent a person's attributes (height, weight, etc.) with
+                        an input vector (x<sup>(i)</sup>), and whether they have suffered from CD with a 
+                        label (y<sup>(i)</sup>). 
+                      </p>
+                    </div><br>
+
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        <div class="cmath">
+                            `f(x)=x^2 + 2x + 1 = 0`             Derivative of the function : `f^'(x)=2x + 2`
+                           
+                            `frac(df(x))(dx) = lim_(h->0)(f(x+h)-f(x))/h`
+                           
+                            `f(t) = a_(0)/2 + sum_(n=1)^oo [a_(n) cos(nt) + b_(n) sin(nt)]`
+                           
+                            `x^' = frac(-b -sqrt(Delta))(2a)`
+                           </div>
+                      </p>
+                    </div><br>
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+                    
+                    <!-- Question -->
+                    <button class="collapsible">
+                        (SAMPLE QUESTION)
+                    </button>
+                    <div class="content">
+                      <p>
+                        (SAMPLE ANSWER)
+                      </p>
+                    </div><br>
+
+
+
+                </div><br>
+                <!--------------------------> 
+            </div>
+                
+
+        </div>
+
+            
+        </div>
+
+
+
+    </div>
+
+    <!-- JS for the collapsible cards -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
