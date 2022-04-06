@@ -108,20 +108,13 @@ body {
 }
 
 .contents-row{
-  padding-right: 20px;
+  padding-right: 60px;
 }
 
 .contents-item{
   color: #19f6e8;
   padding-bottom: 12px;
   font-size: 13px;
-}
-
-.contents-heading{
-  color: #19f6e8;
-  padding-top: 14px;
-  font-size: 13px;
-  text-decoration: underline;
 }
 
 /* collapsible cards */
@@ -317,8 +310,7 @@ body {
       width: 100%;
     }
     .section{
-
-      padding-right: 10px;
+      padding-right: 15px;
     }
     .contents{
       flex-direction: column;
