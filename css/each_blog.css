@@ -117,6 +117,16 @@ body {
   font-size: 13px;
 }
 
+
+.code{
+  background-color: #004545;
+  padding-left: 0;
+}
+
+a{
+  color: #19f6e8;
+}
+
 /* collapsible cards */
 
 .collapsible {

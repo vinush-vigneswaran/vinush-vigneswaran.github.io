@@ -10,7 +10,12 @@
     <link rel="icon" href="../media/icon2.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <!-- latex -->
-    <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script>
+    <!-- <script async="true" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=AM_CHTML"> </script> -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 
     <title>Vinush Vigneswaran</title>
 
@@ -81,10 +86,9 @@
                     go through the questions again and see if you
                     retained the definitions and concepts.</p>
 
-                    <p>There are three types of questions, labelled as 
-                    "concept", "definition" and "code". The concept-based
-                    questions require a bit of thinking and expects you to explain the
-                    concept to yourself. The other two are self-explanatory.</p>
+                    <p>Go through the questions in order since the concept builds
+                      from previous questions.
+                    </p>
                 </div>
                 <div class="section">
                     <p>
@@ -123,11 +127,14 @@
 
                 <!-- CHAPTER 2: End-to-End Machine Learning Projects -->
                 <div id="s02"><div class="subheading"><b>02 &emsp; End-to-End Machine Learning Projects</b></div><br></div>
+
+                <!-- Keywords and Notations -->
+                <div id="s02"><div class="subsubheading">Keywords and Notations</div><br></div>
                 <div class="section">
 
                     <!-- Question 2.0 -->
                     <button class="collapsible">
-                        2.0&emsp; 
+                        2.0.0 &emsp; 
                         What is a data pipeline?
                     </button>
                     <div class="content">
@@ -147,7 +154,7 @@
 
                     <!-- Question 2.1 -->
                     <button class="collapsible">
-                        2.1 &emsp;
+                        2.0.1 &emsp;
                         What is the difference between univariate and multivariate regression problem?
                     </button>
                     <div class="content">
@@ -162,7 +169,7 @@
 
                     <!-- Question 2.2-->
                     <button class="collapsible">
-                        2.2 &emsp;
+                        2.0.2 &emsp;
                         What is a multiple regression problem?
                     </button>
                     <div class="content">
@@ -175,7 +182,7 @@
 
                     <!-- Question 2.3 -->
                     <button class="collapsible">
-                        2.3 &emsp;
+                        2.0.3 &emsp;
                         What is the typical perfomance measure used for regression problems?
                         Write down the equation.
                     </button>
@@ -198,231 +205,199 @@
 
                     <!-- Question 2.4 -->
                     <button class="collapsible">
-                        2.4 &emsp;
+                        2.0.4 &emsp;
                         How can you mathematically represent the i-th instance?
                     </button>
                     <div class="content">
                       <p>
-                        We need to be able to represent each instance efficiently.
                         Let's say given a few features such as height, weight, frequency
-                        of exercise we would like to predict the whether or not the person
-                        will suffer from  cardiovascular diseases (CD).
+                        of exercise we would like to predict the person's life expectancy.
                       </p><p>
                         Each person would be an instance.
                       </p><p>
-                        When we collect the data to train our model, we can represent a person's attributes (height, weight, etc.) with
-                        an input vector (x<sup>(i)</sup>), and whether they have suffered from CD with a 
-                        label (y<sup>(i)</sup>). 
+                        When we collect the data to train our model, we can represent a person's attributes 
+                        (height, weight, etc.) with an input vector (x<sup>(i)</sup>), 
+                        
+                        $$
+                        \bf{x}^{(1)} = \begin{bmatrix}
+                        1.87 \\
+                        78 \\
+                        8 \\
+                        0
+                        \end{bmatrix}
+                        $$
+                      </p><p>
+                        I.e. the first person's attributes are: height is 1.87 m, weight is 78 kg, exercises 
+                        8 times a month, has never smoked (binary - 0 or 1 meaning yes or no).
+                      </p><p>
+                        For each input vector, there would be a corresponding label (y<sup>(i)</sup>) - the
+                        desired output (in this case it is a scalar value for the age at which the person died.)
+                        $$
+                        y^{(1)} = 72
+                        $$
                       </p>
                     </div><br>
 
-                    <!-- Question -->
+                    <!-- Question 2.5 -->
                     <button class="collapsible">
-                        (SAMPLE QUESTION)
+                        2.0.5 &emsp;
+                        How can we represent all the instances and their features mathematically? 
                     </button>
                     <div class="content">
                       <p>
                         <div class="cmath">
-                            `f(x)=x^2 + 2x + 1 = 0`             Derivative of the function : `f^'(x)=2x + 2`
-                           
-                            `frac(df(x))(dx) = lim_(h->0)(f(x+h)-f(x))/h`
-                           
-                            `f(t) = a_(0)/2 + sum_(n=1)^oo [a_(n) cos(nt) + b_(n) sin(nt)]`
-                           
-                            `x^' = frac(-b -sqrt(Delta))(2a)`
+                            We can use a matrix <b>X</b> which hold all the feature vectors of all the instances.
+                            <br>
+                            $$
+                            \mathbf{X} = \begin{bmatrix}
+                            {(\mathbf{x}^{(1)})}^T \\
+                            {(\mathbf{x}^{(2)})}^T \\
+                            {(\mathbf{x}^{(3)})}^T \\
+                            ...  \\
+                            {(\mathbf{x}^{(i)})}^T
+                            \end{bmatrix}
+                            $$
+                            The vectors are transposed, such that the matrix columns represent a single feature for all 
+                            the instances.
                            </div>
                       </p>
                     </div><br>
                     
-                    <!-- Question -->
+                    <!-- Question 2.6 -->
                     <button class="collapsible">
-                        (SAMPLE QUESTION)
+                      2.0.6 &emsp;
+                      RMSE assigns a lot of weight to larger errors.
+                      What performance measure works better than RMSE with outliers?
                     </button>
                     <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
+                      <br>
+                      Mean Absolute Error (MAE) - here instead of the squaring function (as with RMSE) we simply
+                      take the absolute of the difference.
+                      $$
+                      MAE(\mathbf{X},h) = \frac{1}{m} \sum^{m}_{i=1} |h(\mathbf{x}^{(i)})-\mathbf{y}^{(i)}|
+                      $$
+                      
                     </div><br>
 
                     
-                    <!-- Question -->
+                    <!-- Question 2.7-->
                     <button class="collapsible">
-                        (SAMPLE QUESTION)
+                      2.0.7 &emsp;
+                      What is RMSE and MAE a measure of?
                     </button>
                     <div class="content">
                       <p>
-                        (SAMPLE ANSWER)
-                      </p>
+                        They both measure the distance between two vectors: RMSE (Euclidean Norm or L2 norm) and 
+                        MAE (Manhattan Norm or L1 norm). The value after the L- in L1 or L2 norm represents the 
+                        power to which each element is taken to, then rooted. 
+                      </p><p>
+                      So for L2 we square all elements and square root the average of the squared elements.
+                      For L3 we cube all the elements and cube root the average of the cubed elements.
+                      For L-k we take it to power k, and k-root the average.
+                      </p><p>
+                        The higher the norm index the more it focuses on large values and neglect smaller ones.
+                     </p>
                     </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-                    
-                    <!-- Question -->
-                    <button class="collapsible">
-                        (SAMPLE QUESTION)
-                    </button>
-                    <div class="content">
-                      <p>
-                        (SAMPLE ANSWER)
-                      </p>
-                    </div><br>
-
-
 
                 </div><br>
+                <!-- Data & Visualisation -->
+                <div id="s02"><div class="subsubheading">Data & Visualisation</div><br></div>
+                <div class="section">
+                    The following questions are with respect to 
+                    <a href=https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.tgz>housing data</a>.
+                    Predicting the value of houses based on some attributes.
+                    <br><br>
+
+                    <!-- Question 2.1 -->
+                    <button class="collapsible">
+                        2.1.0 &emsp;
+                        Write code to read the 
+                        <a href=https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.tgz>housing data</a>.
+                        Look through the data and plot a histogram with 50 bins for each attribute.
+                    </button>
+                    <div class="content">
+                      <p>
+                        The following google collab 
+                        <a href=https://colab.research.google.com/drive/1RAMpxyCd8WlJ_g6u943CtE7cVPgwTfGx?usp=sharing>link</a>.
+                        has example code for this problem.
+                        <br><br>
+                        The answer for this question are in section "Fetching and Loading Data"
+                        and "Quick View of Data".
+                      </p>
+                    </div><br>
+
+                    <!-- Question 2.1 -->
+                    <button class="collapsible">
+                      2.1.1 &emsp;
+                      How many attributes are there? and what type of attributes are they?
+                  </button>
+                  <div class="content">
+                    <p>
+                      10 attributes: 9 numeric and 1 categorical (5 categories)
+                    </p>
+                  </div><br>
+
+                    <!-- Question 2.1 -->
+                    <button class="collapsible">
+                      2.1.2 &emsp;
+                      How many instances are there in the data?
+                  </button>
+                  <div class="content">
+                    <p>
+                      Total of 20640 instances
+                    </p>
+                  </div><br>
+
+                    <!-- Question 2.1 -->
+                    <button class="collapsible">
+                      2.1.3 &emsp;
+                      Are there any missing data?
+                  </button>
+                  <div class="content">
+                    <p>
+                      Total number of bedrooms has Null values (some data is missing)
+                    </p>
+                  </div><br>
+
+                    <!-- Question 2.1 -->
+                    <button class="collapsible">
+                      2.1.4 &emsp;
+                      How to reduce sampling bias that arise from random sampling?
+                  </button>
+                  <div class="content">
+                    <p>
+                      The problem with random sampling to obtain a test set is
+                      that the test set may not be representative of the 
+                      full set, since the data is randomly sampled.
+                    </p><p>
+                      A better solution might be to do statified sampling based on 
+                      an important feature. Let's say the median income has a big impact on
+                      housing prices. Then you would want to make sure to categorise
+                      the incomes, and ensure the test and train data have 
+                      proportional data distribution accross the income brackets.
+                      This ensures the test data is representative of the train 
+                      data, and that the importance of a particular income bracket
+                      is not exaggerated. Therefore the evaluation would be more representative
+                      of the model.
+                    </p>
+                  </div><br>
+
+                    <!-- Question 2.1 -->
+                    <button class="collapsible">
+                      2.1.5 &emsp;
+                      Write code to seperate out the test and train set using random and stratified sampling.
+                  </button>
+                  <div class="content">
+                    <p>
+                      The following google collab 
+                      <a href=https://colab.research.google.com/drive/1RAMpxyCd8WlJ_g6u943CtE7cVPgwTfGx?usp=sharing>link</a>.
+                      has example code for this problem.
+                      <br><br>
+                      The answer for this question is in section "Seperate out test set".
+                    </p>
+                  </div><br>
+
+                </div>
                 <!--------------------------> 
             </div>
                 
