@@ -308,7 +308,7 @@ a{
   display: flex;
   flex-direction: row;
   text-align: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 .simple-button{
