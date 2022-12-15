@@ -384,6 +384,11 @@ a{
     .hidden{
       display: none;
     }
+    .side-by-side{
+      flex-direction: column;
+      padding-left: 0px;
+
+    }
   }
 
 
