@@ -110,7 +110,6 @@ body {
 .img-container {
   width:100%;
   position: relative;
-
 }
 
 .image {
@@ -132,8 +131,29 @@ body {
   background-color: teal;
 }
 
+.painting-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The overlay covers the entire image */
+.painting-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+/* When hovering over the card, fade in the overlay */
+.painting-card:hover .painting-overlay {
+  opacity: 1;
+}
+
 .proj-card:hover .overlay {
-  opacity: 0.93;
+  opacity: 0.95;
 }
 
 .text {
