@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/each_blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../media/icon2.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+    <title>Vinush Vigneswaran</title>
+
+</head>
+<body>
+    <div class="main-container">
+        
+        <!-- Left logo -->
+        <a href="../discourse.html">
+        <div class="header-container">
+            <div class="left-item">
+                <b>candid</b> discourse
+            </div>
+            <div class="left-item">
+                <b><  |</b>
+            </div>       
+        </div>
+        </a>
+
+        <!-- Edit-able content -->
+        <div class="blog-container">
+
+            <div class="blog-block">
+              <div class="title"><b>3D Mesh Generation with Python</b></div>
+              <div class="date">10th of November 2023</div><br>
+
+              <div class="subheading"><b>What is a Mesh?</b></div><br>
+                <div class="section">
+                  A <a href="https://en.wikipedia.org/wiki/Mesh_generation">mesh</a> is a collection of vertices, edges and 
+                  faces to represent a 3D model of an object or system. These 3D models can be a volume or even a surface 
+                  (e.g. a hyperlplane). One way of thinking of meshes, is that it represents
+                  a continuous geometric space in the real world, with discrete geometrical cells on a computer. 
+                  <br><br>
+                  Computational modelling is very useful in scientific communities to simulate and study complex systems. 
+                  These 3D models can be used for analysis and simulations by visualising a certain property about the object or 
+                  system under test. A common use of 3D models is to observe the property (e.g. fluid behaviour, wave propagation, 
+                  thermal attributes etc.) as a projection on the surface of the mesh in the form of a colour gradient. 
+                  In CFD (Computational Fluid Dynamics), these meshes can be used to predict fluid-flow and heat transfers around 
+                  the object. This method is often used for the design of aerodynamic vehicles.
+                </div><br>
+
+              <!-- Contents -->
+                <div class="subheading"><b>Contents</b></div><br>
+                <div class="section">
+                    <div class="contents"> 
+                        <div class="contents-row">
+                            <a href="#s01"><div class="contents-item">01 &emsp; What is VTK and PyVista?</div></a>
+                            <a href="#s02"><div class="contents-item">02 &emsp; Point and Cells make a Mesh</div></a>
+                            <a href="#s03"><div class="contents-item">03 &emsp; Generating simple meshes</div></a>
+                        </div>
+                        <div class="contents-row">
+                          <a href="#s04"><div class="contents-item">04 &emsp; Generating complex meshes: St Helens Mountain</div></a>
+                          <a href="#s05"><div class="contents-item">05 &emsp; Generating complex meshes: the heart</div></a>
+                          <a href="#s06"><div class="contents-item">08 &emsp; References</div></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- section -->
+                <br><div id="s01" class="subheading"><b>What is VTK and PyVista?</b></div><br>
+                <div class="section">
+                  <a href="https://vtk.org/">VTK</a>, the Visualisation Toolkit, 
+                  is a popular open-source software for 3D modelling and scientific visualisation. 
+                  VTK was developed in C++ and offers flavours in other languages such as JavaScript, C# and even Python 
+                  (<a href="https://pypi.org/project/vtk/">vtk Python</a>). 
+                  <br><br>
+                  <a href="https://docs.pyvista.org/version/stable/">PyVista</a> library allows the VTK library to be used in a pythonic matter, by providing a wrapper for VTK data types. 
+                  This means being able to use numpy data objects to create the mesh and plot with minimal code. 
+                  <!-- <br><br>
+                  Below you can see an example of the effort needed to plot a mesh using VTK library vs PyVista library 
+                  (example extracted from official PyVista Docs <ref>): -->
+                </div><br>
+                <!-- section end -->
+
+                  <!-- image -->
+                  <img class=img_low width = 96% src="https://docs.pyvista.org/version/stable/_static/pyvista_banner_small.png">
+                  <div class="section">
+                      <p>PyVista - a python library which allows you to generate 3D models.</p>
+                  </div><br>
+                  <!-- image end -->
+
+                <!-- code -->
+                <!-- <div class="code_wraps">
+                  <code>
+<pre>
+  ### plotting with PyVista ###
+
+  grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
+</pre>
+                  </code>  
+                </div><br>
+                <div class="code_wraps">
+                  <code>
+<pre>
+  ### plotting with vtk ###
+
+  actor = vtk.vtkImageActor()
+  actor.GetMapper().SetInputData(image_data)
+  ren = vtk.vtkRenderer()
+  renWin = vtk.vtkRenderWindow()
+  renWin.AddRenderer(ren)
+  renWin.SetWindowName('ReadSTL')
+  iren = vtk.vtkRenderWindowInteractor()
+  iren.SetRenderWindow(renWin)
+  ren.AddActor(actor)
+  iren.Initialize()
+  renWin.Render()
+  iren.Start()
+</pre>
+                  </code>  
+                </div><br> -->
+                <!-- code ends -->
+
+                <!-- section -->
+                <div id="s01" class="subheading"><b>Point and Cells make a Mesh</b></div><br>
+                <div class="section">
+                    Let’s say your tutor was on the phone with you, helping you with your school homework. 
+                    They wanted you to plot a coloured scatter graph on a graph paper, with red and blue dots. 
+                    They would need to give you two pieces of information: 
+                    <ul>
+                      <li>the coordinates of the points</li>
+                      <li>the colour of each point</li>
+                    </ul>
+                    As the second part of the homework, the teacher wanted you to draw the points and connect these 
+                    points to create an image of a cat, like a connect-the-dot exercise. In this case, the teacher needs 
+                    to provide you with one more piece of information:
+                    <ul>
+                      <li>the connection between each point (i.e. the edge)</li>
+                    </ul>
+                    And if the teacher wanted you to colour each of the segments (i.e the face) created by the connections 
+                    (for example, the whiskers of the cat should be black), then you may need another piece of information 
+                    to map a colour to each segment.
+                </div><br>
+
+
+                <div class="section">
+                  Creating a mesh through PyVista is pretty much the same process as what is described above.
+                  <br>
+                  Let’s assume we want to plot a point cloud (a 3D scatter graph). To “draw” the points you would need the 
+                  Cartesian coordinates of each point cloud (x, y, z). If you wanted to connect these 3D points to form a gridded mesh, 
+                  you would need the connectivity between the points.
+                  <br>
+                  A cell is a fundamental geometrical unit, that when combined forms the entire mesh – 
+                  a bit like the Lego piece that forms the Lego castle. Each cell is defined by the connecting points and 
+                  the edges that connect them. 
+
+                  <ul>
+                    <li>the coordinates of the points</li>
+                    <li>the colour of each point</li>
+                  </ul>
+                  As the second part of the homework, the teacher wanted you to draw the points and connect these 
+                  points to create an image of a cat, like a connect-the-dot exercise. In this case, the teacher needs 
+                  to provide you with one more piece of information:
+                  <ul>
+                    <li>the connection between each point (i.e. the edge)</li>
+                  </ul>
+                  And if the teacher wanted you to colour each of the segments (i.e the face) created by the connections 
+                  (for example, the whiskers of the cat should be black), then you may need another piece of information 
+                  to map a colour to each segment.
+              </div><br>
+
+
+                <!-- section end -->
+                <!-- image -->
+                <img class=img_low width = 96% src="https://docs.pyvista.org/version/stable/_images/what-is-a-mesh-1_00_00.png">
+                <div class="section">
+                    <p>Image from PyVista website: the same mesh with point data (left) and cell data (right).</p>
+                </div><br>
+                <!-- image end -->
+
+
+
+
+                
+
+
+
+                </div><br>
+
+
+                
+
+                
+
+                
+
+              <!-- <br><div id="s02" class="subheading"><b>Debye length</b></div><br> -->
+                <!-- <div class="section">
+                    What is a more rigorous definition of plasma?
+                    <br><br>
+                    An ionised gas, that is globally neutral but displays collective effects.
+                    <br><br>
+                </div><br> -->
+
+                <div class="section">
+                  <!-- QUESTION -->
+                  <!-- <button class="collapsible">
+                    1 &emsp; 
+                    What is electrostatic potential?
+                  </button>
+                  <div class="content">
+                  <p>
+                    The amount of work done to move a unit charge from a reference point
+                    to a specific point inside the field without producing an acceleration.
+                  </p>
+                  </div> -->
+                  <!--END QUESTION -->
+              <!-- </div><br> -->
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JS for the collapsible cards -->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+

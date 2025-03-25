@@ -126,6 +126,12 @@ body {
   flex-direction: row;
 }
 
+.column{
+  padding-top: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
 .contents-row{
   padding-right: 60px;
 }
@@ -133,13 +139,18 @@ body {
 .contents-item{
   color: #19f6e8;
   padding-bottom: 12px;
-  font-size: 13px;
+  font-size: 17px;
 }
 
-
-.code{
-  background-color: #004545;
-  padding-left: 0;
+.code_wraps{
+  border-radius: 15px;
+  background-color: #364747;
+  color: #FFFF00;
+  display: block;
+  padding: 2px;
+  margin-right: 15px;
+  text-align: left;
+  line-height: 1.2em; 
 }
 
 a{
@@ -304,6 +315,10 @@ a{
   
   .active, .dot:hover {
     background-color: teal;
+  }
+
+  .img_low {
+    filter: brightness(40%);
   }
   
   /* Fading animation */

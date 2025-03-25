@@ -7,6 +7,11 @@ body {
   
   }
 
+  #logo{
+    font-size: 80%;
+    font-weight: bold;
+  }
+
   .header{
     display: flex;
     flex-direction: row;
@@ -34,7 +39,7 @@ body {
     text-align: center;
     font-size:350%;
     flex-grow: 1;
-    padding-top: 10%;
+    padding-top: 8%;
   }
 
   .my-info{
@@ -56,7 +61,7 @@ body {
     display: flex;
     flex-direction: row;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 13%;
     justify-content: center;
   }
   
