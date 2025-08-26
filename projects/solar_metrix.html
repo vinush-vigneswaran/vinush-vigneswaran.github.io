@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/each_blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../media/icon2.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <title>Vinush Vigneswaran</title>
+
+</head>
+<body>
+    <div class="main-container">
+
+         <a href="../projects.html">
+        <div class="header-container">
+            <div class="left-item">
+                <b>tinkering</b> around
+            </div>
+            <div class="left-item">
+                <b><  |</b>
+            </div>
+        </div>
+        </a>
+
+        <div class="blog-container">
+
+            <div class="blog-block">
+                <div class="title"><b>Solar Metrix</b></div>
+                <div class="date">June 2025 | Uncover your roof's solar potential</div><br>
+              
+                <div class="subheading"><b>Resources</b></div><br>
+                <div class="button-group">
+                    <a target="_blank" href="https://www.jamesdysonaward.org/en-US/2025/project/solar-metrix"><div class="simple-button">Solar Metrix</div></a>
+                    <a target="_blank" href="https://www.jamesdysonaward.org/en-us/home/"><div class="simple-button">James Dyson</div></a>
+                </div> 
+
+                <div class="subheading"><b>What it does</b></div><br>
+                <div class="section">
+                    Solar Metrix: A smart device and dashboard that helps you understand your roof’s solar potential before you commit: 
+                    predicting energy output, optimal panel setup and break-even time, while monitoring your environment, including CO₂ 
+                    levels and noise pollution.
+                    <br><br>
+                    This technology is at the prototype stage, developped alongside <a href="https://uk.linkedin.com/in/renush-vigneswaran-202054224">Renush Vigneswaran</a>.
+                </div><br>
+                <img width = 100% src="../media/james_dyson/slide1.png"><br>
+
+                <div class="subheading"><b>How it works</b></div><br>
+                <div class="section">
+                    The device contains a small, low-cost solar panel that measures power output. 
+                    This data is calibrated with satellite data from the European Space Agency to estimate your 
+                    solar potential based on location. The system calculates how many panels you’d need to meet a 
+                    chosen percentage of your energy demand; whether that's 100%, partial coverage, or battery-supported. 
+                    These options are presented through an interactive, visual dashboard that avoids technical jargon. 
+                    The device is housed in an environmentally friendly casing, with a microprocessor that streams live 
+                    data to a server, plus sensors to monitor CO₂, temperature, and noise pollution. It’s also designed 
+                    for easy roof mounting, with an adjustable panel angle for accurate simulation. Alongside the device, 
+                    we developed GeoMetrix; a simulation platform that validates our models and can be used by researchers, 
+                    industry, or the government for large-scale geospatial analysis & climate action.
+                </div><br>
+                <img width = 100% src="../media/james_dyson/slide2.png"><br>
+
+                <div class="subheading"><b>Design process</b></div><br>
+                <div class="section">
+                    We began with desk research and user interviews of homeowners, renters, and recent adopters 
+                    to understand barriers to rooftop solar adoption. Most people found it expensive, confusing, 
+                    and risky, but said they’d consider it if given clear, personalised data on savings and ROI. 
+                    This inspired our concept: an affordable, easy-to-install device that simulates solar 
+                    performance. We explored options like wide-angle cameras, irradiance sensors, and various 
+                    PV sizes before settling on a small panel; cost-effective and accurate when paired with 
+                    software calibration. Tilt angle proved important, so we integrated a tiltable PV panel 
+                    into the casing to maintain easy mounting. Our first prototype used a breadboard, 
+                    Raspberry Pi, power sensor, and a spare PV panel, all housed in a plastic Tupperware box 
+                    and located on the balcony. It streamed power data every minute to my laptop. 
+                    While raw data was limited, combining it with satellite data and calibrating it through 
+                    an AI model greatly improved accuracy and location-based estimates. 
+                    After several iterations, we landed on a minimal, lightweight, 3D-printable design using 
+                    Siemens NX. The dashboard interface was built in Figma Design Tool. This became Solar 
+                    Metrix; a tool to help people understand their solar potential before they commit.
+                </div><br>
+                <img width = 100% src="../media/james_dyson/slide3.png"><br><br>
+                <img width = 100% src="../media/james_dyson/slide4.png"><br>
+
+                <div class="subheading"><b>How is it different</b></div><br>
+                <div class="section">
+                    This is the first product to offer isolated solar monitoring specifically designed for 
+                    everyday consumers, rather than for industry or research use. By combining a small PV 
+                    panel with data engineering techniques, we interpolate performance to estimate full 
+                    rooftop output, avoiding the need for expensive industrial tools such as Aurora Solar 
+                    (£220/month) or Kipp & Zonen pyranometers (up to £5,000). Unlike most online simulators 
+                    that rely solely on satellite data, and can suffer from low accuracy and resolution, 
+                    this system calibrates satellite input with real roof-level data, significantly improving 
+                    prediction accuracy. Once installed, the device can operate for 30–40 hours on battery 
+                    (using a Pi Zero W), recharging itself via its integrated PV panel and requiring minimal 
+                    maintenance. Users receive averaged hourly solar insights, supporting reliable system 
+                    sizing and installer recommendations.
+                </div><br>
+
+
+                <div class="subheading"><b>Future plans</b></div><br>
+                <div class="section">
+                    Our vision is to enable decentralised energy hubs, where individuals can produce, use, 
+                    and sell their own solar energy. Solar Metrix acts as the gateway; delivering accurate, 
+                    personalised data and removing technical barriers to adoption. By providing recommendations 
+                    for full PV system setups, we create a high-intent user base, giving us commercial leverage 
+                    with installers and encouraging greater transparency and fairer pricing. As adoption grows, 
+                    we envision smart microgrids and local energy-sharing communities, paving the way for
+                     peer-to-peer trading, shared battery systems, and new green business models powered by 
+                     real user data.
+                </div><br>
+                <img width = 100% src="../media/james_dyson/slide5.png"><br>
+
+                <div class="subheading"><b>Submissions</b></div>
+                <div class="section">
+                    <p>This project was submitted as part of the James Dyson Awards Competition.
+                    </p>
+                </div>         
+                                   
+                <div class="links">
+                    <a href="https://www.jamesdysonaward.org/en-us/home/">
+                        <i class="fa fa-link"></i> James Dyson Awards</i>
+                    </a><br><br>
+
+                    <a href="https://www.jamesdysonaward.org/en-US/2025/project/solar-metrix">
+                        <i class="fa fa-link"></i> Solar Metrix Submission</i>
+                    </a><br><br>
+
+                </div><br><br>
+  
+                <br>
+            </div>
+            
+        </div>
+
+
+
+    </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
